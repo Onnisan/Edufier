@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- custom Style css -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Edufier | Gamification</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-3 col-xl-2 px-sm-2 px-0 bg-light dashboard_bg sticky-top">
+                <div class="d-flex flex-sm-column flex-row flex-nowrap  align-items-center sticky-top">
+                    <a href="/" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+                        <img src="logo.svg" alt="">
+                    </a>
+                    <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
+                        <li class="nav-item">
+                            <a href="/index.html" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                                Dashboard
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm p-3 min-vh-100">
+                    <h2 class="px-3">Gamification</h2>
+                <div class="container courses_container">
+                    <div class="row justify-content-center video_container">
+                        <div id="player"></div>
+                        <script src="http://www.youtube.com/player_api"></script>
+
+                        <script>
+                            let points = 0;
+                            // create youtube player
+                            let player;
+                            function onYouTubePlayerAPIReady() {
+                                player = new YT.Player('player', {
+                                videoId: 'ELavuz3btaE',
+                                events: {
+                                    'onStateChange': onPlayerStateChange
+                                }
+                                });
+                            }
+
+
+                            // when video ends
+                            function onPlayerStateChange(event) {        
+                                if(event.data === 0) {            
+                                    points+= 5;
+                                    const quizBtn = document.querySelector('#quiz');
+                                    quizBtn.classList.remove('btn-disabled');
+                                    quizBtn.classList.add('btn-enabled');
+                                    const pointsadd = document.querySelector('span');
+                                    pointsadd.innerHTML = points
+                                }
+                            }
+                        </script>
+                    </div>
+                    <div class="row pt-5">
+                        <div class="col text-center">
+                            <div>
+                                <button id="quiz" class="btn-disabled start-btn" type="button" onclick="myFunction()">Start the quiz</button>
+                            </div>
+                            <div class="points">
+                                <p>Your points:</p>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+    <!-- 1 -->
+    <div class="mt-10" id="question1" style="display: none">
+        <div class="container centered contentDiv">
+            <div class="text-center mb-0">
+                <div class="container2">
+                    <div class="questionDiv">
+                        <p style="padding-bottom: 10px">To make something boring more appealing and gain sense of accoplishment</p>
+                    </div>
+                </div>
+
+                <div class="error-msg pt-3"></div>
+
+                <div class="choice radio-toolbar pt-2">
+                    <form name="form">
+                        <div class="options">
+                            <input type="radio" name="options" value="5" id="opt0">
+                            <label for="opt0" id="lb0">challange your self a progress/leveling up bar</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt1">
+                            <label for="opt1" id="lb1">never do it</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt2">
+                            <label for="opt2" id="lb1">leave it as is</label>
+                        </div>
+                    </form>
+                </div>
+
+                <button class="btn btn-dangedr btn-lg btn-next border-0 mt-2 clickToQ2">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="mt-5" id="question2" style="display: none">
+        <div class="container centered contentDiv">
+            <div class="text-center mb-4">
+                <div class="container1">
+                    <div class="questionDiv">
+                        <p style="padding-bottom: 10px; font-size: 22px;">Gamification can enhace creativity and get a better feedback</p>
+                    </div>
+                </div>
+
+                <div class="error-msg pt-3"></div>
+
+                <div class="choice radio-toolbar pt-4">
+                    <form name="form">
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt3">
+                            <label for="opt3" id="lb1">No</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="5" id="opt4">
+                            <label for="opt4" id="lb0">Yes</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt5">
+                            <label for="opt5" id="lb1">Waste of time</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="next-button"><button
+                        class="btn btn-dangedr btn-lg btn-next border-0 mt-2 clickToQ3">Next</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="mt-5" id="question3" style="display: none">
+        <div class="container centered contentDiv">
+            <div class="text-center mb-4">
+                <div class="container1">
+                    <div class="questionDiv">
+                        <p style="padding-bottom: 10px">The idea of making anything has more meaning or purpose is refered to </p>
+                    </div>
+                </div>
+
+                <div class="error-msg pt-3"></div>
+
+                <div class="choice radio-toolbar pt-4">
+                    <form name="form">
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt6">
+                            <label for="opt6" id="lb1">Development meaning</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt7">
+                            <label for="opt7" id="lb1">Great meaning</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="5" id="opt8">
+                            <label for="opt8" id="lb0">Epic meaning </label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="next-button"><button
+                        class="btn btn-dangedr btn-lg btn-next border-0 mt-2 clickToQ4">Next</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="mt-5" id="question4" style="display: none">
+        <div class="container centered contentDiv">
+            <div class="text-center mb-4">
+                <div class="container1">
+                    <div class="questionDiv">
+                        <p style="padding-bottom: 10px">Loss and avoidance concept makes you</p>
+                    </div>
+                </div>
+
+                <div class="error-msg pt-3"></div>
+
+                <div class="choice radio-toolbar pt-4">
+                    <form name="form">
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt9">
+                            <label for="opt9" id="lb1">Motivated to get lower scores and avoid lossing</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt10">
+                            <label for="opt10" id="lb1">Motivated to get high scores and lose anyway</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="5" id="opt11">
+                            <label for="opt11" id="lb0">Motivated to get high scores and avoid lossing</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="next-button"><button
+                        class="btn btn-dangedr btn-lg btn-next border-0 mt-2 clickToQ5">Next</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="mt-5" id="question5" style="display: none">
+        <div class="container centered contentDiv">
+            <div class="text-center mb-4">
+                <div class="container1">
+                    <div class="questionDiv">
+                        <p style="padding-bottom: 10px; font-size: 22px;">Games makes you get excited when the</p>
+                    </div>
+                </div>
+
+                <div class="error-msg pt-3"></div>
+
+                <div class="choice radio-toolbar pt-4">
+                    <form name="form">
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt12">
+                            <label for="opt12" id="lb0">rewards are predictable</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="5" id="opt13">
+                            <label for="opt13" id="lb0">rewards are unpredictable</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt14">
+                            <label for="opt14" id="lb1">rewards are easy to obtain</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="next-button"><button
+                        class="btn btn-dangedr btn-lg btn-next border-0 mt-2 clickToQ6">Next</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="mt-5" id="question6" style="display: none">
+        <div class="container centered contentDiv">
+            <div class="text-center mb-4">
+                <div class="container1">
+                    <div class="questionDiv">
+                        <p style="padding-bottom: 10px">Gamification make things fun by</p>
+                    </div>
+                </div>
+
+                <div class="error-msg pt-3"></div>
+
+                <div class="choice radio-toolbar pt-4">
+                    <form name="form">
+                        <div class="options">
+                            <input type="radio" name="options" value="5" id="opt15">
+                            <label for="opt15" id="lb0">taking ownership of your outcome, process and beliefs</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt16">
+                            <label for="opt16" id="lb1">being unresposible</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt17">
+                            <label for="opt17" id="lb1">stressing</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="next-button"><button
+                        class="btn btn-dangedr btn-lg btn-next border-0 mt-2 clickToQ7">Next</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="mt-5" id="question7" style="display: none">
+        <div class="container centered contentDiv">
+            <div class="text-center mb-4">
+                <div class="container1">
+                    <div class="questionDiv">
+                        <p style="padding-bottom: 10px">The secret thing to sustain our productivity is</p>
+                    </div>
+                </div>
+
+                <div class="error-msg pt-3"></div>
+
+                <div class="choice radio-toolbar pt-4">
+                    <form name="form">
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt18">
+                            <label for="opt18" id="lb1">Sleep</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="0" id="opt19">
+                            <label for="opt19" id="lb0">Keep working</label>
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="options" value="5" id="opt20">
+                            <label for="opt20" id="lb1">Make it more fun to do</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="next-button"><button
+                        class="btn btn-dangedr btn-lg btn-next border-0 mt-2 clickToResult">Next</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- result -->
+    <div id="result" style="display: none">
+        <div class="container resultDiv centered">
+            <div class="container1">
+                <div class="centered show-result centered"></div>
+            </div>
+        </div>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            function myFunction(){
+                let ytPlayer = document.querySelector(".video_container");
+                ytPlayer.classList.add('player-hidden');
+                question1.style.display = 'block'
+                const quizBtn = document.querySelector('#quiz');
+                quizBtn.style.display= 'none';
+            }
+    </script>
+    <script src="js/main.js"></script>
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
+        crossorigin="anonymous "></script>
+</body>
+</html>

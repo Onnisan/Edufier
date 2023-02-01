@@ -1,0 +1,225 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body{
+    background-color: #8E6FB2;
+}
+
+.sign-in{
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    max-width: 475px;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.sign-in h2{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.sign-in h4{
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #6C6C6C;
+}
+
+.sign-in label{
+    font-weight: 500;
+    font-size: 1rem;
+    color: #6C6C6C;
+}
+
+.sign-in input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #CDCDCD;
+    font-weight: 400;
+    font-size: 0.9rem;
+    opacity: 1; /* Firefox */
+  }
+  
+  .sign-in input::-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #CDCDCD;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+  
+  .sign-in input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #CDCDCD;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+
+.sign-in button{
+    width: 100%;
+    padding: 0.7em 0em;
+}
+
+
+
+/* Dashboard */
+
+.dashboard_bg{
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0 20px 20px 0;
+}
+
+.nav-link{
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #6C6C6C;
+    transition: 0.6s;
+}
+
+.nav:hover{
+    border-left: #8E6FB2 solid 5px;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: #8E6FB2;
+    transition: 0.6s;
+}
+
+.col-sm h2{
+    color: white;
+}
+
+.courses_container .col-12 div{
+    min-width: 100%;
+    min-height: 100%;
+    background-color: white;
+    border-radius: 15%;
+    min-height: 200px;
+    padding: 2rem;
+}
+
+
+.courses_container div a{
+    text-decoration: none;
+    color: #8E6FB2;
+}
+
+@media only screen and (max-width: 40em) { 
+    .dashboard_bg{
+
+        border-radius: 0;
+    
+    }
+} 
+
+
+#player{
+    height: 50vh;
+}
+
+.player-hidden{
+    display: none;
+}
+
+.btn-disabled{
+    pointer-events: none;
+    color: #CDCDCD;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 2em 4em;
+}
+
+.btn-enabled{
+    position: relative;
+    pointer-events: visible;
+    color: #8E6FB2;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 2em 4em;
+}
+
+.points{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.questionDiv {
+    display: inline-block;
+    padding-top: 5px;
+    font-size: 22px;
+    width: 350px;
+    background: white;
+    border:#090A18;
+    border-radius: 20px;
+    opacity: 0.9;
+    color: #8E6FB2;
+}
+
+.centered2 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px
+}
+
+.radio-toolbar input[type="radio"] {
+    display: none;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 11px 11px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 293px;
+    height: auto;
+    left: 69px;
+    background: #090A18;
+    border: 2px solid #090A18;
+    box-sizing: border-box;
+    border-radius: 20px;
+    color: white;
+}
+
+.radio-toolbar input[type="radio"]:checked+label {
+    border-color: white;
+}
+
+.container1 {
+    position: relative;
+    text-align: center;
+    top: 30px;
+}
+
+.btn-next {
+    background-color: white;
+    color: #8E6FB2;
+    width: 160px;
+    height: 46px;
+    border-radius: 20px;
+}
+
+
+.btn-next:hover {
+    color: #fff;
+}
+
+#result{
+    font-size: 22px;
+    height: 150px;
+    background: white;
+    border:#090A18;
+    border-radius: 20px;
+    opacity: 0.9;
+    color: #8E6FB2;
+}
